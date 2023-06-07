@@ -1,0 +1,44 @@
+@import "../utils/variables";
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  @include flex-center;
+  color: $color_4;
+  text-decoration: none;
+  font-family: $font-family_2;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: $mainlineheight;
+  letter-spacing: $mainletterspacing;
+}
+
+.page-header__webstudio-header {
+  @extend .logo;
+  &::after {
+    content: "Studio";
+    color: $color_2;
+  }
+}
+.webstudio-footer {
+  @extend .logo;
+  margin-bottom: 20px;
+  padding-top: 40px;
+  &::after {
+    content: "Studio";
+    color: $color_1;
+  }
+}
+@media screen and (min-width: 768px) {
+  .webstudio-footer {
+    margin-left: -400px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .webstudio-footer {
+    margin-left: -1020px;
+  }
+}

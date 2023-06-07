@@ -1,0 +1,118 @@
+@import "../utils/variables";
+
+@mixin fill-cursor {
+  fill: $fill_2;
+  cursor: $maincursor;
+}
+@mixin color-cursor-hover {
+  color: $color_4;
+  cursor: $maincursor;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+.navigation-header-contact {
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color $maintransition;
+}
+
+.header-contact-details__icon {
+  margin-right: 10px;
+}
+
+.page-header {
+  background: $background-color_4;
+  height: 80px;
+  display: flex;
+  width: $mainwidth;
+  margin: $centerelement;
+}
+.page-header__header-navigation {
+  display: flex;
+  flex-grow: 1;
+}
+.header-navigation__list {
+  @include flex-center;
+  gap: 50px;
+  margin-left: 40px;
+}
+.navigation-list__link {
+  @extend .navigation-header-contact;
+  color: $color_2;
+  &:focus {
+    @include color-cursor-hover;
+  }
+  &:hover {
+    @include color-cursor-hover;
+  }
+}
+.header-contact-details__list {
+  display: flex;
+  gap: $maingap;
+}
+
+.header-contact-details__link {
+  display: flex;
+  &:hover {
+    @include color-cursor-hover;
+  }
+  &:focus {
+    @include color-cursor-hover;
+  }
+}
+a.header-contact-details__link {
+  @extend .navigation-header-contact;
+  color: $color_3;
+  margin-right: 10px;
+  fill: $fill_1;
+  transition: fill $maintransition;
+  align-items: center;
+  &:hover {
+    @include fill-cursor;
+  }
+  &:focus {
+    @include fill-cursor;
+  }
+}
+
+.navigation-list__item {
+  .active--link {
+    position: relative;
+    &::after {
+      content: "";
+      border: 2px solid $color_4;
+      width: $mainwidth;
+      position: absolute;
+      bottom: -32px;
+      border-radius: 4px;
+      visibility: visible;
+      left: 0;
+    }
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .header-contact-details__list {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .page-header {
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header-contact-details__list {
+    gap: $maingap;
+    flex-direction: row;
+    margin-left: 0 auto;
+    align-items: center;
+  }
+}

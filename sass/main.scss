@@ -1,0 +1,48 @@
+@import "../sass/components/logo";
+@import "../sass/components/page-header";
+@import "../sass/utils/variables";
+@import "../sass/components/page-footer";
+@import "../sass/components/buttons";
+@import "../sass/components/first-section";
+@import "../sass/components/modal";
+@import "../sass/components/second-section";
+@import "../sass/components/third-section";
+@import "../sass/components/forth-section";
+@import "../sass/components/customers";
+@import "../sass/components/cards";
+@import "../sass/components/mobile-menu";
+
+ul {
+  list-style: none;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: #212121;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+}
+.container {
+  margin: 0 auto;
+  width: 480px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+ul {
+  padding-inline-start: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+body::-webkit-scrollbar {
+  display: none;
+}

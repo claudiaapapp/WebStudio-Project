@@ -1,0 +1,80 @@
+@import "../utils/variables";
+
+.first-section__heading {
+  letter-spacing: 0.06em;
+  text-align: center;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 42px;
+  color: $color_1;
+  text-transform: uppercase;
+  padding-top: 80px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.first-section {
+  padding-top: 70px;
+  background: $background-color_7;
+  height: 490px;
+  margin-bottom: 94px;
+  text-align: center;
+  background-image: url(./../images/team-m-1x.png);
+  background-color: $background-color_1;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 768px) {
+  .first-section {
+    background-image: url("./../images/team-t-1x.jpg");
+    background-color: $background-color_1;
+  }
+
+  .first-section__heading {
+    padding-top: 80px;
+    padding-right: 200px;
+    padding-left: 200px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .first-section {
+    background-image: url(./../images/team.jpg);
+    background-color: $background-color_1;
+    height: 600px;
+  }
+  .first-section__heading {
+    font-size: 44px;
+    padding-top: 50px;
+    padding-left: 250px;
+    padding-right: 250px;
+    line-height: 1.36;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .first-section {
+    background-image: url("./../images/team-m-2x.png");
+    background-color: $background-color_1;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 768px) and (min-resolution: 192dpi),
+  screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .first-section {
+    background-image: url("./../images/team-t-2x.jpg");
+    background-color: $background-color_1;
+  }
+}
+
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2),
+  screen and (min-width: 1200px) and (min-resolution: 192dpi),
+  screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .first-section {
+    background-image: url("./../images/team-t-2x.jpg");
+    background-color: $background-color_1;
+  }
+}

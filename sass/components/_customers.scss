@@ -1,0 +1,66 @@
+@import "../utils/variables";
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin border($color) {
+  border: 1px solid;
+}
+.customers__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  letter-spacing: $mainletterspacing;
+  text-align: center;
+  color: $color_2;
+}
+.icons__list {
+  display: grid;
+  grid-template-columns: repeat(2, 210px);
+  grid-auto-rows: auto;
+
+  gap: 30px;
+  margin-top: 50px;
+}
+.icons__item {
+  box-sizing: border-box;
+  @include border($border-color_3);
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  width: 210px;
+  height: 92px;
+  @include flex-center;
+  padding-inline-start: 0px;
+  fill: $fill_4;
+  transition: fill $maintransition;
+  &:hover {
+    border: 1px solid #2196f3;
+    fill: $fill_2;
+    cursor: $maincursor;
+  }
+}
+.customers__icons {
+  margin-top: 94px;
+  margin-bottom: 94px;
+}
+@media screen and (min-width: 768px) {
+  .icons__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .icons__list {
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+  }
+  .icons__item {
+    width: 170px;
+  }
+}

@@ -1,0 +1,169 @@
+@import "../utils/variables";
+
+@mixin fill-cursor {
+  fill: $fill_2;
+  cursor: $maincursor;
+  text-decoration: none;
+}
+@mixin border($color) {
+  border: 1px solid;
+}
+
+.modal-form {
+  text-align: left;
+  display: block;
+  transition: fill border $maintransition;
+}
+.modal-form-advance {
+  @extend .modal-form;
+  box-sizing: border-box;
+  @include border($border-color_5);
+  border-radius: 4px;
+}
+.label-placeholder {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 650px;
+  background-color: $background-color_4;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.is-hidden {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal__close-button {
+  float: right;
+  @include border($border-color_4);
+  border-radius: 50%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 8px;
+  width: 30px;
+  height: 30px;
+  background: $background-color_4;
+  transition: fill $maintransition;
+  &:hover {
+    @include fill-cursor;
+  }
+  &:focus {
+    @include fill-cursor;
+  }
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $background-color_5;
+  opacity: 1;
+  transition: opacity $maintransition;
+}
+.modal__form-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: $mainletterspacing;
+  color: $color_2;
+}
+.modal__form-container {
+  margin: $centerelement;
+  width: 450px;
+}
+
+.modal__form-input {
+  width: 448px;
+  height: 40px;
+  margin-top: 4px;
+}
+.modal__form-textarea {
+  width: 448px;
+  height: 120px;
+  margin-top: 4px;
+}
+.terms {
+  color: $color_7;
+}
+.modal-icons {
+  position: relative;
+  bottom: 25px;
+  left: 10px;
+}
+.modal__form-replaced-checkbox {
+  margin-top: 17px;
+  width: 16px;
+  height: 15px;
+  border-radius: 2px;
+  border: 2px solid $color_2;
+  margin-right: 10px;
+}
+.terms-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: $mainletterspacing;
+  color: $color_3;
+}
+.modal__form-checkbox {
+  visibility: hidden;
+  &:checked {
+    + {
+      .modal__form-replaced-checkbox {
+        background: $background-color_3;
+        border-color: $border-color_1;
+      }
+    }
+  }
+}
+.checkbox-mark {
+  position: static;
+  top: -2px;
+  fill: $fill_3;
+}
+.modal__form-label {
+  @extend .modal-form;
+  margin-bottom: 20px;
+  font-weight: 400;
+  @extend .label-placeholder;
+  color: $color_3;
+  &:hover {
+    fill: $fill_2;
+  }
+}
+.modal__form-input {
+  @extend .modal-form_advanced !optional;
+  padding-left: 30px;
+  &:hover {
+    @include border($border-color_1);
+    cursor: $maincursor;
+  }
+}
+.modal__form-textarea {
+  @extend .modal-form_advanced !optional;
+  overflow: hidden;
+  &::placeholder {
+    @extend .label-placeholder;
+    color: $color_6;
+    position: relative;
+    left: 16px;
+    top: 12px;
+  }
+  &:hover {
+    @include border($border-color_1);
+    cursor: $maincursor;
+  }
+}

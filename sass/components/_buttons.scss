@@ -1,0 +1,143 @@
+@import "../utils/variables";
+
+@mixin button-shadow {
+  box-shadow: 0px 4px 4px $color_9;
+  cursor: $maincursor;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: $color_1;
+  border: $mainborder;
+  background: $background-color_3;
+  border-radius: 4px;
+}
+
+.buttons-hover-focus {
+  color: $color_1;
+  background: $background-color_3;
+  border-radius: 4px;
+  box-shadow: 0px 3px 1px $color_10, 0px 1px 2px $color_11,
+    0px 2px 2px $color_12;
+  cursor: $maincursor;
+}
+
+.first-section__button {
+  &:hover {
+    @include button-shadow;
+  }
+  &:focus {
+    @include button-shadow;
+  }
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: $color_1;
+  border: $mainborder;
+  background: $background-color_3;
+  border-radius: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+  margin: $centerelement;
+  transition: box-shadow $maintransition;
+}
+.modal__form-button {
+  @include button-shadow;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: $color_1;
+  border: $mainborder;
+  background: $background-color_3;
+  border-radius: 4px;
+  padding: 10px 80px;
+}
+.checkbox-button {
+  @include flex-center();
+  flex-direction: row;
+}
+.buttons__list {
+  @include flex-center;
+  gap: 8px;
+  margin-bottom: 50px;
+  padding-top: 94px;
+}
+.buttons__list-item {
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: $mainletterspacing;
+  border: $mainborder;
+  color: $color_2;
+  background: $background-color_8;
+  border-radius: 4px;
+  padding: 6px 22px;
+  transition: color background-color box-shadow $maintransition;
+  &:hover {
+    @extend .buttons-hover-focus;
+  }
+  &:focus {
+    @extend .buttons-hover-focus;
+  }
+}
+.footer-form__button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: $color_1;
+  border: $mainborder;
+  background: $background-color_3;
+  border-radius: 4px;
+  @include button-shadow;
+  width: 200px;
+  height: 50px;
+  margin-left: 140px;
+}
+
+.footer-form__button-icon-svg {
+  margin-left: 15px;
+  padding-top: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-form__button {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    color: $color_1;
+    border: $mainborder;
+    background: $background-color_3;
+    border-radius: 4px;
+    @include button-shadow;
+    position: relative;
+    left: -30px;
+    top: -150px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer-form__button {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    color: $color_1;
+    border: $mainborder;
+    background: $background-color_3;
+    border-radius: 4px;
+    @include button-shadow;
+    position: relative;
+    top: -148px;
+    left: -160px;
+  }
+}

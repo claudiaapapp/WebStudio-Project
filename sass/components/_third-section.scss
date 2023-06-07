@@ -1,0 +1,46 @@
+@import "../utils/variables";
+
+.activities__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  letter-spacing: $mainletterspacing;
+  text-align: center;
+  color: $color_2;
+}
+.third-section {
+  padding-bottom: 94px;
+  width: $mainwidth;
+}
+.activities__list {
+  @include section-list;
+}
+.activity-container__description {
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: $mainletterspacing;
+  text-transform: uppercase;
+  color: $color_1;
+  padding-top: 15px;
+}
+.activity-container {
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  background: $background-color_10;
+  top: 1450px;
+}
+@media screen and (max-width: 1199px) {
+  .third-section {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .third-section {
+    padding-inline-start: 0px;
+  }
+  .activities__list {
+    gap: 40px;
+  }
+}

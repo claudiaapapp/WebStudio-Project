@@ -1,0 +1,93 @@
+@import "../utils/variables";
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-text {
+  font-weight: 700;
+  letter-spacing: $mainletterspacing;
+  text-align: center;
+  color: $color_2;
+}
+.team__title {
+  @extend .team-text;
+  font-size: 36px;
+  line-height: 1.16;
+}
+.team__name {
+  @extend .team-text;
+  padding-left: 20px;
+}
+
+.forth-section {
+  background: $background-color_8;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.team__list {
+  display: grid;
+  grid-template-columns: repeat(1, 270px);
+  grid-auto-rows: auto;
+  gap: 30px;
+}
+
+.team__item {
+  box-shadow: 0px 1px 3px $color_12, 0px 1px 1px $color_15,
+    0px 2px 1px $color_16;
+  border-radius: 4px;
+  background: $background-color_4;
+  width: 450px;
+}
+.team__job-description {
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.71;
+  letter-spacing: $mainletterspacing;
+  color: $color_3;
+}
+.social-media-icons__list {
+  @include flex-center;
+  gap: 10px;
+  padding: 0px;
+  margin-bottom: 30px;
+}
+
+.social-media-icons__item {
+  fill: $fill_4;
+  border-radius: 50%;
+  @include flex-center;
+  width: 44px;
+  height: 44px;
+  transition: fill, background-color $maintransition;
+  &:hover {
+    background-color: $background-color_3;
+    border-radius: 50%;
+    @include flex-center;
+    fill: $fill_3;
+    cursor: $maincursor;
+  }
+}
+@media screen and (min-width: 768px) {
+  .team__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+  }
+  .team__item {
+    width: 354px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .team__list {
+    flex-direction: row;
+  }
+  .team__item {
+    width: 270px;
+  }
+}
